@@ -36,8 +36,8 @@ for (let i = 0; i < newArray.length; i++) {
   dataArray.push(data);
 }
 
-console.log(newArray);
-console.log(dataArray);
+// console.log(newArray);
+// console.log(dataArray);
 
 // Part 2: Expanding Functionality
 
@@ -46,6 +46,20 @@ let cellHeaders = [];
 for (let i = 0; i < dataArray[0].length; i++) {
   cellHeaders.push(dataArray[0][i]);
 }
-console.log(cellHeaders);
+// console.log(cellHeaders);
 
 // Part 3: Transforming Data
+const objectArray = [];
+let headers = dataArray[0];
+
+for (let i = 1; i < dataArray.length; i++) {
+  let row = dataArray[i];
+  let obj = {};
+
+  for (let j = 0; j < row.length; j++) {
+    obj[headers[j]] = row[j];
+  }
+  objectArray.push(obj);
+}
+
+console.log(objectArray);
